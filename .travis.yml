@@ -39,9 +39,9 @@ before_install:
 
 # optionally set up exclusions and allowed failures in the matrix
 matrix:
-  exclude:
+  include:
     - php: 7.2
-      env: ILLUMINATE=6.* OR ILLUMINATE=7.*
+      env: ILLUMINATE=6.*
 #  allow_failures:
 #    - php: hhvm
 #      env: ILLUMINATE=dev-master
