@@ -1,0 +1,30 @@
+{
+    "name": "poing/laravel-travis",
+    "type": "library",
+    "description": "TravisCI with Laravel and orchestra/testbench test matrix",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brian LaVallee",
+            "email": "brian.lavallee@invite-comm.jp"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "illuminate/console": "^5.5",
+        "illuminate/database": "^5.5",
+        "illuminate/events": "^5.5",
+        "illuminate/filesystem": "^5.5",
+        "illuminate/support": "^5.5"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.10",
+        "orchestra/testbench": "^3.5",
+        "nunomaduro/collision": "^2.0"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Matrix\\Tests\\": "tests"
+        }
+    }
+}
