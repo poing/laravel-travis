@@ -28,18 +28,10 @@ before_install:
 # optionally set up exclusions and allowed failures in the matrix
 matrix:
   exclude:
-    - php: 7.1
-      env: TESTBENCH=3.9.*
-    - php: 7.1
-      env: TESTBENCH=4.*
     - php: 7.2
       env: TESTBENCH=dev-master
     - php: 7.3
-      env: TESTBENCH=4.*
-    - php: 7.3
       env: TESTBENCH=dev-master
-    - php: 7.4
-      env: TESTBENCH=4.*
     - php: hhvm
       env: TESTBENCH=3.8.*
     - php: hhvm
