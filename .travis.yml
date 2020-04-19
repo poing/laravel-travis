@@ -7,6 +7,7 @@ php:
   # - 7.1 # Version 7.1.33 | End of Life: 1 Dec 2019
   - 7.2 # Version 7.2.30 | End of Life: 30 Nov 2020
   - 7.3
+  - 7.4
   - hhvm
 
 env:
@@ -40,8 +41,8 @@ before_install:
 # optionally set up exclusions and allowed failures in the matrix
 matrix:
   exclude:
-    - php: 7.1
-      env: ILLUMINATE=6.* TESTBENCH=4.* PHPUNIT=8
+#    - php: 7.1
+#      env: ILLUMINATE=6.* TESTBENCH=4.* PHPUNIT=8
     - php: 7.2
       env: ILLUMINATE=5.5.34 TESTBENCH=3.5.5 PHPUNIT=6.0
     - php: 7.2
@@ -50,10 +51,17 @@ matrix:
       env: ILLUMINATE=5.5.34 TESTBENCH=3.5.5 PHPUNIT=6.0
     - php: 7.3
       env: ILLUMINATE=dev-master TESTBENCH=dev-master PHPUNIT=devmaster
-
-allow_failures:
-  - php: 7.1
-    env: ILLUMINATE=6.* TESTBENCH=4.* PHPUNIT=8      
+    - php: 7.4
+      env: ILLUMINATE=5.5.34 TESTBENCH=3.5.5 PHPUNIT=6.0
+    - php: 7.4
+      env: ILLUMINATE=dev-master TESTBENCH=dev-master PHPUNIT=devmaster
+    - php: hhvm
+      env: ILLUMINATE=5.5.34 TESTBENCH=3.5.5 PHPUNIT=6.0
+    - php: hhvm
+      env: ILLUMINATE=dev-master TESTBENCH=dev-master PHPUNIT=devmaster
+    allow_failures:
+    - php: hhvm
+      env: ILLUMINATE=dev-master TESTBENCH=dev-master PHPUNIT=devmaster
 
 before_script:
   - travis_retry composer self-update
