@@ -4,7 +4,7 @@ php:
   #- 5.5.9
   #- 5.6 # Version 5.6.40 | End of Life: 10 Jan 2019
   # - 7.0 # Version 7.0.33 | End of Life: 10 Jan 2019
-  # - 7.1 # Version 7.1.33 | End of Life: 1 Dec 2019
+  - 7.1 # Version 7.1.33 | End of Life: 1 Dec 2019
   - 7.2 # Version 7.2.30 | End of Life: 30 Nov 2020
 #  - 7.3
 #  - 7.4
@@ -12,6 +12,8 @@ php:
 
 env:
   - TESTBENCH=3.8.*
+  - TESTBENCH=3.9.*
+
 #  #- ILLUMINATE=5.2.*
 #  #- ILLUMINATE=5.3.*
 #  #- ILLUMINATE=5.4.*
@@ -42,10 +44,10 @@ before_install:
 #    - composer require --dev "orchestra/testbench:3.5.*"
 
 # optionally set up exclusions and allowed failures in the matrix
-#matrix:
-#  exclude:
-##    - php: 7.1
-##      env: ILLUMINATE=6.* TESTBENCH=4.* PHPUNIT=8
+matrix:
+  exclude:
+    - php: 7.1
+      env: TESTBENCH=3.8.*
 #    - php: 7.2
 #      env: ILLUMINATE=5.5.34 TESTBENCH=3.5.5 PHPUNIT=6.0
 #    - php: 7.2
