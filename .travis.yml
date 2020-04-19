@@ -14,6 +14,7 @@ env:
   - TESTBENCH=3.8.*
   - TESTBENCH=3.9.*
   - TESTBENCH=4.*
+  - TESTBENCH=5.*
 
 #  #- ILLUMINATE=5.2.*
 #  #- ILLUMINATE=5.3.*
@@ -49,6 +50,8 @@ matrix:
   exclude:
     - php: 7.1
       env: TESTBENCH=3.9.*
+    - php: 7.1
+      env: TESTBENCH=4.*
 #    - php: 7.2
 #      env: ILLUMINATE=5.5.34 TESTBENCH=3.5.5 PHPUNIT=6.0
 #    - php: 7.2
