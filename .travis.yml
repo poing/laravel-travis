@@ -41,9 +41,9 @@ before_install:
 matrix:
   exclude:
     - php: 7.1
-    env: ILLUMINATE=6.* TESTBENCH=3.6.* PHPUNIT=7
+      env: ILLUMINATE=6.* TESTBENCH=3.6.* PHPUNIT=7
     - php: 7.2
-    env: ILLUMINATE=5.5.* TESTBENCH=3.5.* PHPUNIT=6
+      env: ILLUMINATE=5.5.* TESTBENCH=3.5.* PHPUNIT=6
 #  allow_failures:
 #    - php: hhvm
 #      env: ILLUMINATE=dev-master
