@@ -15,7 +15,7 @@ env:
   - TESTBENCH=3.9.*
   - TESTBENCH=4.*
   - TESTBENCH=5.0.*
-  #- TESTBENCH=dev-master
+  - TESTBENCH=dev-master
 
 before_install:
   #- composer remove illuminate/support illuminate/console illuminate/database \
@@ -40,8 +40,6 @@ matrix:
       env: TESTBENCH=dev-master
     - php: 7.4
       env: TESTBENCH=4.*
-    - php: 7.4
-      env: TESTBENCH=dev-master
     - php: hhvm
       env: TESTBENCH=3.8.*
     - php: hhvm
