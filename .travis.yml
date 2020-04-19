@@ -19,7 +19,7 @@ env:
 
 before_install:
   #- composer remove illuminate/support illuminate/console illuminate/database \
-    illuminate/events illuminate/filesystem illuminate/support
+  #  illuminate/events illuminate/filesystem illuminate/support
   - composer require --dev "orchestra/testbench:${TESTBENCH}" --prefer-dist --no-update
 
 #  if: ILLUMINATE=5.5.*
@@ -68,10 +68,10 @@ matrix:
 #      env: ILLUMINATE=5.5.34 TESTBENCH=3.5.5 PHPUNIT=6.0
 #    - php: hhvm
 #      env: ILLUMINATE=dev-master TESTBENCH=dev-master PHPUNIT=devmaster
-  allow_failures:
-    include:
-      - php: hhvm
-        env: TESTBENCH=dev-master
+#  allow_failures:
+#    include:
+#      - php: hhvm
+#        env: TESTBENCH=dev-master
 
 before_script:
   - travis_retry composer self-update
