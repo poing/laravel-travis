@@ -4,17 +4,19 @@ php:
   #- 5.5.9
   #- 5.6 # Version 5.6.40 | End of Life: 10 Jan 2019
   # - 7.0 # Version 7.0.33 | End of Life: 10 Jan 2019
-  - 7.1 # Version 7.1.33 | End of Life: 1 Dec 2019
-  - 7.2 # Version 7.2.30 | End of Life: 30 Nov 2020
-  - 7.3
-  - 7.4
-  #- hhvm
+#  - 7.1 # Version 7.1.33 | End of Life: 1 Dec 2019
+#  - 7.2 # Version 7.2.30 | End of Life: 30 Nov 2020
+  - 7.2.5
+#  - 7.3
+#  - 7.4
+#  - hhvm
 
 env:
   - TESTBENCH=3.8.*
   - TESTBENCH=3.9.*
   - TESTBENCH=4.*
   - TESTBENCH=5.*
+  - TESTBENCH=dev-master
 
 #  #- ILLUMINATE=5.2.*
 #  #- ILLUMINATE=5.3.*
@@ -52,6 +54,18 @@ matrix:
       env: TESTBENCH=3.9.*
     - php: 7.1
       env: TESTBENCH=4.*
+    - php: 7.2
+      env: TESTBENCH=dev-master
+    - php: 7.3
+      env: TESTBENCH=4.*
+    - php: 7.4
+      env: TESTBENCH=4.*
+    - php: hhvm
+      env: TESTBENCH=3.8.*
+    - php: hhvm
+      env: TESTBENCH=3.9.*
+    - php: hhvm
+      env: TESTBENCH=4.*
 #    - php: 7.2
 #      env: ILLUMINATE=5.5.34 TESTBENCH=3.5.5 PHPUNIT=6.0
 #    - php: 7.2
@@ -72,9 +86,9 @@ matrix:
 #      env: ILLUMINATE=5.5.34 TESTBENCH=3.5.5 PHPUNIT=6.0
 #    - php: hhvm
 #      env: ILLUMINATE=dev-master TESTBENCH=dev-master PHPUNIT=devmaster
-#  allow_failures:
-#  - php: hhvm
-#    env: ILLUMINATE=dev-master TESTBENCH=dev-master PHPUNIT=devmaster
+  allow_failures:
+    - php: hhvm
+      env: TESTBENCH=dev-master
 
 before_script:
   - travis_retry composer self-update
