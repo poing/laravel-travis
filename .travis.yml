@@ -8,7 +8,7 @@ php:
   - 7.2 # Version 7.2.30 | End of Life: 30 Nov 2020
   - 7.3
   - 7.4
-  - hhvm
+  #- hhvm
 
 env:
   #- ILLUMINATE=5.2.*
@@ -19,8 +19,8 @@ env:
   #- ILLUMINATE=5.7.* # End of Life
   #- ILLUMINATE=5.8.* # End of Life
   - ILLUMINATE=6.* TESTBENCH=4.* PHPUNIT=8 # LTS | End of Life: 2022-09-03
-  # - ILLUMINATE=7.* # End of Life: 2021-03-03
-  - ILLUMINATE=dev-master TESTBENCH=dev-master PHPUNIT=devmaster
+  - ILLUMINATE=7.* TESTBENCH=5.* PHPUNIT=9 # End of Life: 2021-03-03
+  #- ILLUMINATE=dev-master TESTBENCH=dev-master PHPUNIT=devmaster
   # - TESTBENCH=3.5.*
   # - TESTBENCH=3.6.*
   
