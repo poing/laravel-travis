@@ -15,7 +15,7 @@ env:
   - TESTBENCH=3.8.*
   - TESTBENCH=3.9.*
   - TESTBENCH=4.*
-  - TESTBENCH=5.0.*
+  #- TESTBENCH=5.0.*
   - TESTBENCH=dev-master
 
 #  #- ILLUMINATE=5.2.*
@@ -58,8 +58,12 @@ matrix:
       env: TESTBENCH=dev-master
     - php: 7.3
       env: TESTBENCH=4.*
+    - php: 7.3
+      env: TESTBENCH=dev-master
     - php: 7.4
       env: TESTBENCH=4.*
+    - php: 7.4
+      env: TESTBENCH=dev-master
     - php: hhvm
       env: TESTBENCH=3.8.*
     - php: hhvm
@@ -87,8 +91,9 @@ matrix:
 #    - php: hhvm
 #      env: ILLUMINATE=dev-master TESTBENCH=dev-master PHPUNIT=devmaster
   allow_failures:
-    - php: hhvm
-      env: TESTBENCH=dev-master
+    include:
+      - php: hhvm
+        env: TESTBENCH=dev-master
 
 before_script:
   - travis_retry composer self-update
